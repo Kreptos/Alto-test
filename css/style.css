@@ -18,12 +18,19 @@
 
 .card{
     width: 303px;
-    height: 443px;
+    max-height: 443px;
     border: 1px solid #E4ECF9;
     box-shadow: 0px 3px 6px #DFEAFC;
     background: #ffffff;
     cursor: pointer;
     margin-right: 20px;
+    overflow: hidden;
+    transition: max-height linear .2s;
+}
+
+.card:hover{
+    max-height: 600px;
+    transition: max-height linear .2s;
 }
 
 .card:last-child{
@@ -33,6 +40,12 @@
 .card__img{
     padding: 20px 20px 14px 20px;
     border-bottom: 1px solid #E4ECF9;
+    text-align:center;
+}
+
+.card__img img{
+    max-width: 265px;
+    width: 100%;
 }
 
 .card__info{
@@ -122,15 +135,17 @@
 }
 
 .hidden_info{
-    display: none;
-}
-
-.card:hover{
-    height: auto;
+    /* display: none; */
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility linear .1s, opacity linear .1s;
 }
 
 .card:hover .hidden_info{
     display: inherit;
+    visibility: visible;
+    opacity: 1;
+    transition: visibility linear .2s, opacity linear .2s;
 }
 
 .pagination{
@@ -197,4 +212,59 @@
 
 .pagination__next{
     margin-left: 13px;
+}
+
+@media(max-width: 1320px){
+    .wrapper{
+        width: 100%;
+        padding: 0 20px;
+    }
+    .cards{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        /* flex-wrap: wrap; */
+    }
+    .card{
+        width: 25%;
+    }
+
+    .pagination{
+        width: 100%;
+    }
+    .pagination__inner{
+        padding-left: 0;
+    }
+}
+
+@media(max-width: 1050px){
+    .cards{
+        flex-wrap: wrap;
+    }
+    .card{
+        width: 48%;
+        margin: 0 auto!important;
+        margin-bottom: 12px!important;
+    }
+
+    .pagination{
+        position: relative;
+        margin: 20px 0;
+        bottom: 0;
+    }
+}
+
+@media(max-width: 626px){
+    .wrapper{
+        margin-top: 20px;
+    }
+    .card{
+        width: 100%;
+    }
+    .pagination__back{
+        margin-right: 0;
+    }
+    .pagination__next{
+        margin-left: 0;
+    }
 }
