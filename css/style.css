@@ -188,7 +188,7 @@
     color: #ffffff;
 }
 
-.pagination__item.disabled{
+.pagination__item:disabled{
     background: #EFF5FE;
     color: #9FAABA;
     cursor: default;
