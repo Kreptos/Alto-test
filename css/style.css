@@ -261,10 +261,21 @@
     .card{
         width: 100%;
     }
+    .pagination__inner{
+        display: flex;
+        justify-content: space-between;
+    }
+    .pagination__item{
+        font-size: 12px;
+        width: 29px;
+        height: 29px;
+    }
     .pagination__back{
         margin-right: 0;
+        width: auto;
     }
     .pagination__next{
         margin-left: 0;
+        width: auto;
     }
 }
