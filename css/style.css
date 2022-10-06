@@ -216,7 +216,7 @@
 
 @media(max-width: 1320px){
     .wrapper{
-        width: 100%;
+        width: auto;
         padding: 0 20px;
     }
     .cards{
